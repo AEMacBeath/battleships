@@ -13,8 +13,19 @@ if difficulty == 'h':
 else:
     size = 5
 
+area = []
+
 for i in range(size):
-    print(" . " * size)
+    area.append(["O"] * size)
+
+def print_area(area):
+    """
+    to be added
+    """
+    for line in area:
+        print((" ").join(line))
+
+print_area(area)
 
 # Game play
 # Score calculator
