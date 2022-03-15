@@ -1,3 +1,12 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Gamge heading
+print('WELCOME TO BATTLESHIPS')
+
+# Player enter name - required
+username = input('please enter a username: ')
+print('Hello ' + username)
+
+# Board setup
+# Game play
+# Score calculator
+# Winner / loser
+# Play again
