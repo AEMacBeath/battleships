@@ -17,6 +17,7 @@ def enter_username():
 
     if username != '':
         print('Hello ' + username)
+        board_size()
     else:
         username = input('please enter a username: ')
 
@@ -27,31 +28,28 @@ def board_size():
     board_size function comments
     """
     global size
-
     board = input('Select a board size (enter s for 5x5, enter l for 10x10): ')
 
     if board == 'l':
         size = 10
-        print_board()
     elif board == 's':
         size = 5
-        print_board()
     else:
         board_size()
-
+    
+    print_board()
 
 # Print board
 def print_board():
     """
-    print_board function comments
+    print_board fnuction comments
     """
-    global size
 
     for i in range(size):
         area.append(["."] * size)
     for row in area:
         print((" ").join(row))
-
+    
     game_play()
 
 
@@ -60,27 +58,29 @@ def random_row():
     """
     to be added
     """
-    return random.randint(0, size)
+    return random.randint(0, size - 1)
 
 
 def random_column():
     """
     to be added
     """
-    return random.randint(0, size)
+    return random.randint(0, size - 1)
+
 
 # Game play
 def game_play():
     """
     game_play function comments
     """
+
     ship_row = random_row()
     print(ship_row)
     ship_column = random_column()
     print(ship_column)
     hits = 0
 
-    while hits <= 1:
+    while hits == 0:
         attempt_row = int(input("Enter x coordinate: "))
         attempt_column = int(input("Enter y coordinate: "))
 
@@ -92,9 +92,6 @@ def game_play():
             print("Miss")
             area[attempt_row][attempt_column] = "o"
 
-        print_board()
-
 
 # Call functions
 enter_username()
-board_size()
