@@ -1,31 +1,100 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleships
 
-Welcome AEMacBeath,
+Battleships is a console based game where the player attempts to guess the location of the hidden ships by entering grid coordinates. This game is aimed at players of all ages looking for a quick and easy game to play.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+The players will be able to enter a username, select the board size and play the game. When the game is complete they will be given the option to play again if they want. 
 
-## Reminders
+Link to deployed website - [Battleships](add link when deployed)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+![am-i-responsive-screenshot](add screenshot when deployed)
 
-## Creating the Heroku app
+## Table of Contents
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+1. [Game Instructions](#game-instructions)
+2. [User Stories](#user-stories)
+3. [Features](#features)
+    - [Welcome Screen](#welcome-screen)
+    - [Enter Username](#enter-username)
+    - [Game Play](#game-play)
+4. [Technologies Used](#technologies-used)
+5. [Testing](#testing)
+    - [Bugs](#bugs)
+    - [Validator Testing](#validator-testing)
+6. [Deployment](#deployment)
+7. [Credits](#credits)
+8. [Future Development](#future-development)
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Game Instructions
+Add instuctions 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## User Stories
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+As a user of this site I can
+- enter a username
+- play the game
+- restart the game
 
-Connect your GitHub repository and deploy as normal.
+## Features
 
-## Constraints
+### Welcome Screen
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+The welcome screen consists of the following elements as shown in the below screenshot.
+- A WELCOME TO BATTLESHIPS! message.
+- Game instructions.
+- An input section for users to add a username of their choice.
 
------
-Happy coding!
+![Welcome screen](add screenshot)
+
+### Enter username
+A message to ask users to enter a username<br>
+![Enter nickname message](add screenshot)
+
+### Game play
+
+At the start of the game, the board is made up of .'s printed to the console<br>
+![Starting game screenshot](add screenshot)
+
+The user is then asked to enter x and y coordinates to make their guess <br>
+![enter coords](add screenshot)
+
+After each guess a HIT or MISS message is printed to the console with an updated board showing an X for hit or O for miss. 
+![re-ptrined board](add screenshot)
+
+When the game is complete there is a Congratulations message and option to play again.
+![game complete](add screenshot)
+
+## Technologies used
+
+- Python3
+- GitHub
+- GitPod
+- ![Heroku](https://www.heroku.com/)
+
+## Testing
+
+### Bugs
+
+- to be added (none so far)
+
+### Validator Testing
+- Python - ![PEP8 online](http://pep8online.com/checkresult) <!-- update link with final check -->
+
+## Deployment
+
+This site was deployed to Heroku by following the below steps:
+
+- add steps once complete
+- Link to deployed website - [Battleships](add link when deployed)
+
+## Credits
+
+- Inital code inspired by ![Trinket](https://trinket.io/python/051179b6d3)
+- anymore?? 
+
+## Future Development
+
+- Add player board
+    - Player will be able to set the coordinates for thier ships
+    - The player and computer will then take turns to guess the location of each others ships
+
+- Add attempts counter to show the player how many attempts it took them to locate all the ship
