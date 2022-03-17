@@ -6,7 +6,7 @@ area = []
 username = ''
 
 # Welcome message
-print('WELCOME TO BATTLESHIPS')
+print('Welcome to BATTLESHIPS')
 
 
 # Player enter name - required
@@ -67,7 +67,7 @@ def place_ships():
         ship.append(int(str(random.randint(0, size - 1)) + str(
                     random.randint(0, size - 1))))
 
-    print(ship) # to be removed
+    print(ship)     # to be removed
     game_play(ship)
 
 
@@ -92,7 +92,7 @@ def game_play(ship):
 
         for row in area:
             print((" ").join(row))
-        print(ship) # to be removed
+        print(ship)     # to be removed
     game_complete()
 
 
