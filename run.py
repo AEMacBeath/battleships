@@ -3,8 +3,9 @@ import random
 # Global variables
 size = 0
 area = []
+username = ''
 
-# Gamge heading
+# Welcome message
 print('WELCOME TO BATTLESHIPS')
 
 
@@ -13,6 +14,7 @@ def enter_username():
     """
     enter_username function comments
     """
+    global username
     username = input('please enter a username: ')
 
     if username != '':
@@ -90,6 +92,17 @@ def game_play(ship):
 
         for row in area:
             print((" ").join(row))
+
+    game_complete()
+
+
+# Game complete
+def game_complete():
+    """
+    game_complete function comments
+    """
+    print('Congratulations ' + username + 'you sunk all the battleships')
+
 
 # Call functions
 enter_username()
