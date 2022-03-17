@@ -15,13 +15,13 @@ def enter_username():
     enter_username function comments
     """
     global username
-    username = input('please enter a username: ')
+    username = input('please enter a username:\n')
 
     if username != '':
         print('Hello ' + username)
         board_size()
     else:
-        username = input('please enter a username: ')
+        username = input('please enter a username:\n')
 
 
 # Select board size
@@ -30,7 +30,7 @@ def board_size():
     board_size function comments
     """
     global size
-    board = input('Select a board size (enter s for 5x5, enter l for 10x10): ')
+    board = input('Select a board size (enter s for 5x5, enter l for 10x10):\n')
 
     if board == 'l':
         size = 10
@@ -79,8 +79,8 @@ def game_play(ship):
     hits = 0
 
     while hits < len(ship):
-        attempt_row = int(input("Enter x coordinate: "))
-        attempt_column = int(input("Enter y coordinate: "))
+        attempt_row = int(input("Enter x coordinate:\n"))
+        attempt_column = int(input("Enter y coordinate:\n"))
 
         if int(str(attempt_row) + str(attempt_column)) in ship:
             print("Hit")
@@ -102,7 +102,7 @@ def game_complete():
     game_complete function comments
     """
     print('Congratulations ' + username + 'you sunk all the battleships')
-    play_again = input('Do you want to play again (y/n)? ')
+    play_again = input('Do you want to play again (y/n)?:\n')
 
     if play_again == 'y':
         board_size()
