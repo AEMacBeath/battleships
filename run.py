@@ -36,7 +36,7 @@ def board_size():
         size = 5
     else:
         board_size()
-    
+
     print_board()
 
 
@@ -50,22 +50,8 @@ def print_board():
         area.append(["."] * size)
     for row in area:
         print((" ").join(row))
-    
-    place_ships()
 
-
-# Randomly select ship placement
-ships = []
-
-
-def place_ships():
-    """
-    to be added
-    """
-    for i in range(size):
-        ships[i] = random.randint(0, size - 1)
-    
-    print(ships)
+    game_play()
 
 
 # Game play
@@ -73,21 +59,27 @@ def game_play():
     """
     game_play function comments
     """
+    ship = []
+    ships = 0
+    for i in range(size):
+        ship.append(int(str(random.randint(0, size - 1)) + str(
+                            random.randint(0, size - 1))))
+        ships += 1
 
+    print(ship)
     hits = 0
 
-    while hits == 0:
+    while hits < ships:
         attempt_row = int(input("Enter x coordinate: "))
         attempt_column = int(input("Enter y coordinate: "))
-        
-        for i in range(size):
-            if attempt_row == ship_row[i] and attempt_column == ship_column[i]:
-                print("Hit")
-                area[attempt_row][attempt_column] = "X"
-                hits += 1
-            else:
-                print("Miss")
-                area[attempt_row][attempt_column] = "o"
+
+        if int(str(attempt_row) + str(attempt_column)) in ship:
+            print("Hit")
+            area[attempt_row][attempt_column] = "X"
+            hits += 1
+        else:
+            print("Miss")
+            area[attempt_row][attempt_column] = "o"
 
 
 # Call functions
