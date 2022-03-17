@@ -92,7 +92,7 @@ def game_play(ship):
 
         for row in area:
             print((" ").join(row))
-
+        print(ship)
     game_complete()
 
 
@@ -102,6 +102,12 @@ def game_complete():
     game_complete function comments
     """
     print('Congratulations ' + username + 'you sunk all the battleships')
+    play_again = input('Do you want to play again (y/n)? ')
+
+    if play_again == 'y':
+        board_size()
+    else:
+        print('Goodbye, thanks for playing Battleships')
 
 
 # Call functions
