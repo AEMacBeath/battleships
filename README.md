@@ -4,7 +4,7 @@ Battleships is a console based game where the player attempts to guess the locat
 
 The players will be able to enter a username, select the board size and play the game. When the game is complete they will be given the option to play again if they want. 
 
-Link to deployed website - [Battleships](add link when deployed)
+Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
 
 ![am-i-responsive-screenshot](add screenshot when deployed)
 
@@ -68,8 +68,7 @@ When the game is complete there is a Congratulations message and option to play 
 - Python3
 - GitHub
 - GitPod
-- ![Heroku](https://www.heroku.com/)
-
+- Heroku
 ## Testing
 
 ### Bugs
@@ -84,7 +83,7 @@ When the game is complete there is a Congratulations message and option to play 
 This site was deployed to Heroku by following the below steps:
 
 - add steps once complete
-- Link to deployed website - [Battleships](add link when deployed)
+- Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
 
 ## Credits
 

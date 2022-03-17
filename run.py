@@ -67,7 +67,7 @@ def place_ships():
         ship.append(int(str(random.randint(0, size - 1)) + str(
                     random.randint(0, size - 1))))
 
-    #print(ship)
+    # print(ship)
     game_play(ship)
 
 
@@ -92,7 +92,7 @@ def game_play(ship):
 
         for row in area:
             print((" ").join(row))
-        #print(ship)
+        # print(ship)
     game_complete()
 
 
