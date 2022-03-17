@@ -37,39 +37,46 @@ def board_size():
     else:
         board_size()
 
-    print_board()
+    for i in range(size):
+        area.append(["."] * size)
+
+    print_board(area)
 
 
 # Print board
-def print_board():
+def print_board(area):
     """
     print_board fnuction comments
     """
 
-    for i in range(size):
-        area.append(["."] * size)
     for row in area:
         print((" ").join(row))
 
-    game_play()
+    place_ships()
+
+
+# Place ships
+def place_ships():
+    """
+    place_ships function comments
+    """
+    ship = []
+    for i in range(size):
+        ship.append(int(str(random.randint(0, size - 1)) + str(
+                    random.randint(0, size - 1))))
+
+    print(ship)
+    game_play(ship)
 
 
 # Game play
-def game_play():
+def game_play(ship):
     """
     game_play function comments
     """
-    ship = []
-    ships = 0
-    for i in range(size):
-        ship.append(int(str(random.randint(0, size - 1)) + str(
-                            random.randint(0, size - 1))))
-        ships += 1
-
-    print(ship)
     hits = 0
 
-    while hits < ships:
+    while hits < len(ship):
         attempt_row = int(input("Enter x coordinate: "))
         attempt_column = int(input("Enter y coordinate: "))
 
@@ -81,6 +88,8 @@ def game_play():
             print("Miss")
             area[attempt_row][attempt_column] = "o"
 
+        for row in area:
+            print((" ").join(row))
 
 # Call functions
 enter_username()
