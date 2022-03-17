@@ -67,7 +67,7 @@ def place_ships():
         ship.append(int(str(random.randint(0, size - 1)) + str(
                     random.randint(0, size - 1))))
 
-    print(ship)     # to be removed
+    #print(ship)
     game_play(ship)
 
 
@@ -92,7 +92,7 @@ def game_play(ship):
 
         for row in area:
             print((" ").join(row))
-        print(ship)     # to be removed
+        #print(ship)
     game_complete()
 
 
@@ -101,7 +101,7 @@ def game_complete():
     """
     game_complete function comments
     """
-    print('Congratulations ' + username + 'you sunk all the battleships')
+    print('Congratulations ' + username + ' you sunk all the battleships')
     play_again = input('Do you want to play again (y/n)?:\n')
 
     if play_again == 'y':
