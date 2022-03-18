@@ -1,5 +1,6 @@
 import random
 import string
+import os
 
 # Global variables
 size = 0
@@ -8,7 +9,6 @@ username = ''
 
 # Welcome message
 print('Welcome to BATTLESHIPS')
-
 
 # Player enter name - required
 def enter_username():
@@ -19,12 +19,15 @@ def enter_username():
     username = input('please enter a username:\n')
 
     if any(char in string.punctuation for char in username):
+        os.system('clear')
         print('Special character used, please use letters only')
         enter_username()
     elif any(char.isdigit() for char in username):
+        os.system('clear')
         print('Number used, please use letters only')
         enter_username()
     else:
+        os.system('clear')
         print('Hello ' + username)
         board_size()
 
@@ -56,6 +59,7 @@ def print_board(area):
     """
     print_board fnuction comments
     """
+    os.system('clear')
     for row in area:
         print((" ").join(row))
 
@@ -69,10 +73,9 @@ def place_ships():
     """
     ship = []
     for i in range(size):
-        ship.append(int(str(random.randint(0, size - 1)) + str(
-                    random.randint(0, size - 1))))
+        ship.append(int(str(random.randint(1, size)) + str(
+                    random.randint(1, size))))
 
-    # print(ship)
     game_play(ship)
 
 
@@ -85,32 +88,34 @@ def game_play(ship):
 
     while hits < len(ship):
         attempt_row = input("Enter x coordinate:\n")
+        attempt_column = input("Enter y coordinate:\n")
+
         try:
             x_coord = int(attempt_row)
         except:
             print(f'Error: {attempt_row} is not a valid entry')
 
-        attempt_column = input("Enter x coordinate:\n")
         try:
             y_coord = int(attempt_column)
         except:
             print(f'Error: {attempt_column} is not a valid entry')
 
         if str(attempt_row).isdigit() and str(attempt_column).isdigit():
-            if int(attempt_row) >= len(ship) or int(attempt_column) >= len(ship):
+            if int(attempt_row) > len(ship) or int(attempt_column) > len(ship):
                 print('Coordinates outside of board. Please try again.')
             else:
                 if int(str(attempt_row) + str(attempt_column)) in ship:
+                    os.system('clear')
                     print("Hit")
-                    area[int(attempt_row)][int(attempt_column)] = "X"
+                    area[int(attempt_row) - 1][int(attempt_column) - 1] = "X"
                     hits += 1
                 else:
+                    os.system('clear')
                     print("Miss")
-                    area[int(attempt_row)][int(attempt_column)] = "o"
+                    area[int(attempt_row) - 1][int(attempt_column) - 1] = "o"
 
             for row in area:
                 print((" ").join(row))
-            # print(ship)
 
         else:
             print('Please enter numbers only.')
@@ -123,6 +128,7 @@ def game_complete():
     """
     game_complete function comments
     """
+    os.system('clear')
     print('Congratulations ' + username + ' you sunk all the battleships')
     play_again = input('Do you want to play again (y/n)?:\n')
 
