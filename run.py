@@ -19,10 +19,10 @@ def enter_username():
     username = input('please enter a username:\n')
 
     if any(char in string.punctuation for char in username):
-        print('Invalid uesrname - special character used, please use letters only')
+        print('Special character used, please use letters only')
         enter_username()
     elif any(char.isdigit() for char in username):
-        print('Invalid uesrname - number used, please use letters only')
+        print('Number used, please use letters only')
         enter_username()
     else:
         print('Hello ' + username)
@@ -84,20 +84,37 @@ def game_play(ship):
     hits = 0
 
     while hits < len(ship):
-        attempt_row = int(input("Enter x coordinate:\n"))
-        attempt_column = int(input("Enter y coordinate:\n"))
+        attempt_row = input("Enter x coordinate:\n")
+        try:
+            x_coord = int(attempt_row)
+        except:
+            print(f'Error: {attempt_row} is not a valid entry')
 
-        if int(str(attempt_row) + str(attempt_column)) in ship:
-            print("Hit")
-            area[attempt_row][attempt_column] = "X"
-            hits += 1
+        attempt_column = input("Enter x coordinate:\n")
+        try:
+            y_coord = int(attempt_column)
+        except:
+            print(f'Error: {attempt_column} is not a valid entry')
+
+        if str(attempt_row).isdigit() and str(attempt_column).isdigit():
+            if attempt_row >= len(ship) or attempt_column >= len(ship):
+                print('Coordinates outside of board. Please try again.')
+            else:
+                if int(str(attempt_row) + str(attempt_column)) in ship:
+                    print("Hit")
+                    area[attempt_row][attempt_column] = "X"
+                    hits += 1
+                else:
+                    print("Miss")
+                    area[attempt_row][attempt_column] = "o"
+
+            for row in area:
+                print((" ").join(row))
+            # print(ship)
+
         else:
-            print("Miss")
-            area[attempt_row][attempt_column] = "o"
+            print('Please enter numbers only.')
 
-        for row in area:
-            print((" ").join(row))
-        # print(ship)
     game_complete()
 
 
