@@ -1,4 +1,5 @@
 import random
+import string
 
 # Global variables
 size = 0
@@ -17,11 +18,15 @@ def enter_username():
     global username
     username = input('please enter a username:\n')
 
-    if username != '':
+    if any(char in string.punctuation for char in username):
+        print('Invalid uesrname - special character used, please use letters only')
+        enter_username()
+    elif any(char.isdigit() for char in username):
+        print('Invalid uesrname - number used, please use letters only')
+        enter_username()
+    else:
         print('Hello ' + username)
         board_size()
-    else:
-        username = input('please enter a username:\n')
 
 
 # Select board size
@@ -30,13 +35,14 @@ def board_size():
     board_size function comments
     """
     global size
-    board = input('Select a board size (enter s for 5x5, enter l for 10x10):\n')
+    board = input('Select a board size. s = small or l = large:\n')
 
     if board == 'l':
         size = 10
     elif board == 's':
         size = 5
     else:
+        print('Invalid selection, please try again')
         board_size()
 
     for i in range(size):
@@ -50,7 +56,6 @@ def print_board(area):
     """
     print_board fnuction comments
     """
-
     for row in area:
         print((" ").join(row))
 
