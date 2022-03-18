@@ -97,16 +97,16 @@ def game_play(ship):
             print(f'Error: {attempt_column} is not a valid entry')
 
         if str(attempt_row).isdigit() and str(attempt_column).isdigit():
-            if attempt_row >= len(ship) or attempt_column >= len(ship):
+            if int(attempt_row) >= len(ship) or int(attempt_column) >= len(ship):
                 print('Coordinates outside of board. Please try again.')
             else:
                 if int(str(attempt_row) + str(attempt_column)) in ship:
                     print("Hit")
-                    area[attempt_row][attempt_column] = "X"
+                    area[int(attempt_row)][int(attempt_column)] = "X"
                     hits += 1
                 else:
                     print("Miss")
-                    area[attempt_row][attempt_column] = "o"
+                    area[int(attempt_row)][int(attempt_column)] = "o"
 
             for row in area:
                 print((" ").join(row))
