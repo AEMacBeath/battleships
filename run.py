@@ -9,7 +9,7 @@ area = []
 username = ''
 
 # Welcome message
-f = open('welcome_ascii.txt','r')
+f = open('welcome_ascii.txt', 'r')
 print(''.join([line for line in f]))
 
 # Instructions
@@ -35,6 +35,7 @@ Game Instructions
 4. Continue entering guesses until all ships are found.
 """
 print(INSTRUCTIONS)
+
 
 # Player enter name - required
 def enter_username():
@@ -115,7 +116,7 @@ def game_play(ship):
     while hits < len(ship):
         attempt_row = input("Enter x coordinate:\n")
         attempt_column = input("Enter y coordinate:\n")
-        
+
         try:
             x_coord = int(attempt_row)
         except:
@@ -155,16 +156,14 @@ def game_complete():
     game_complete function comments
     """
     os.system('clear')
-    f = open('congrats_ascii.txt','r')
-    print(''.join([line for line in f]))
+    print(f'Contgratulations {username}. You sunk all the Battleships')
     play_again = input('Do you want to play again (y/n)?:\n')
 
     if play_again == 'y':
         board_size()
     else:
-        os.system('clear')
-        f = open('goodbye_ascii.txt','r')
-        time.sleep(10)
+        f = open('goodbye_ascii.txt', 'r')
+        time.sleep(30)
 
 
 # Call functions
