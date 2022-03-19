@@ -1,6 +1,7 @@
 import random
 import string
 import os
+import time
 
 # Global variables
 size = 0
@@ -8,12 +9,14 @@ area = []
 username = ''
 
 # Welcome message
-print('Welcome to BATTLESHIPS')
-
+f = open('welcome_ascii.txt','r')
+print(''.join([line for line in f]))
 
 # Instructions
 INSTRUCTIONS = """
-1. To begin the game please enter a user name below.
+Game Instructions
+
+1. Enter a user name to begin the game.
 
 2. Select a board size,
     - Small
@@ -24,14 +27,12 @@ INSTRUCTIONS = """
         - Grid size = 10x10
         - Hidden ships = 10
 
-3. Make a guess by entering an x and y coordinate as prompted. 
+3. Make a guess by entering an x and y coordinate when prompted.
     - Coordinates must be numbers between
         - 1 and 5 on a small board
         - 1 and 10 on a large board
 
 4. Continue entering guesses until all ships are found.
-
-If you would like to quit the game at any time please enter x.
 """
 print(INSTRUCTIONS)
 
@@ -100,7 +101,7 @@ def place_ships():
     for i in range(size):
         ship.append(int(str(random.randint(1, size)) + str(
                     random.randint(1, size))))
-
+    print(ship)
     game_play(ship)
 
 
@@ -114,7 +115,7 @@ def game_play(ship):
     while hits < len(ship):
         attempt_row = input("Enter x coordinate:\n")
         attempt_column = input("Enter y coordinate:\n")
-
+        
         try:
             x_coord = int(attempt_row)
         except:
@@ -141,7 +142,7 @@ def game_play(ship):
 
             for row in area:
                 print((" ").join(row))
-
+            print(ship)
         else:
             print('Please enter numbers only.')
 
@@ -154,14 +155,16 @@ def game_complete():
     game_complete function comments
     """
     os.system('clear')
-    print('Congratulations ' + username + ' you sunk all the battleships')
+    f = open('congrats_ascii.txt','r')
+    print(''.join([line for line in f]))
     play_again = input('Do you want to play again (y/n)?:\n')
 
     if play_again == 'y':
         board_size()
     else:
         os.system('clear')
-        print('Goodbye, thanks for playing Battleships')
+        f = open('goodbye_ascii.txt','r')
+        time.sleep(10)
 
 
 # Call functions
