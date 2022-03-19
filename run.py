@@ -25,7 +25,6 @@ def enter_username():
         enter_username()
     else:
         os.system('clear')
-        print('Hello ' + username)
         board_size()
 
 
@@ -51,7 +50,8 @@ Game Instructions
 
 4. Continue entering guesses until all ships are found.
 
-Enter exit at anytime to close the game. 
+Enter 'exit' at anytime to close the game.
+
 """
 
 # Select board size
@@ -60,6 +60,7 @@ def board_size():
     board_size function comments
     """
     global size
+    print('Hello ' + username)
     print("""
     Select a board size,
 
@@ -200,6 +201,10 @@ def game_complete():
 welcome = open('welcome_ascii.txt', 'r')
 print(''.join([line for line in welcome]))
 
-print(INSTRUCTIONS)
+view_instructions = input('Open instructions? (y/n):\n')
+
+if view_instructions == 'y':
+    os.system('clear')
+    print(INSTRUCTIONS)
 
 enter_username()
