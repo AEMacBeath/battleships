@@ -143,15 +143,15 @@ Make a guess by entering an x and y coordinate when prompted.
             else:
                 if int(str(attempt_row) + str(attempt_column)) in ship:
                     os.system('clear')
-                    pf = open('hit_ascii.txt', 'r')
-                    print(''.join([line for line in f]))
                     area[int(attempt_row) - 1][int(attempt_column) - 1] = "X"
                     hits += 1
+                    hit = open('hit_ascii.txt', 'r')
+                    print(''.join([line for line in hit]))
                 else:
                     os.system('clear')
-                    pf = open('miss_ascii.txt', 'r')
-                    print(''.join([line for line in f]))
                     area[int(attempt_row) - 1][int(attempt_column) - 1] = "o"
+                    miss = open('miss_ascii.txt', 'r')
+                    print(''.join([line for line in miss]))
 
             for row in area:
                 print((" ").join(row))
@@ -177,13 +177,13 @@ def game_complete():
         os.system('clear')
         board_size()
     else:
-        f = open('goodbye_ascii.txt', 'r')
-        print(''.join([line for line in f]))
-        time.sleep(30)
+        goodbye = open('goodbye_ascii.txt', 'r')
+        print(''.join([line for line in goodbye]))
+        time.sleep(5)
 
 
 # Run programme
-f = open('welcome_ascii.txt', 'r')
-print(''.join([line for line in f]))
+welcome = open('welcome_ascii.txt', 'r')
+print(''.join([line for line in welcome]))
 
 enter_username()
