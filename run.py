@@ -8,9 +8,26 @@ size = 0
 area = []
 username = ''
 
-# Welcome message
-f = open('welcome_ascii.txt', 'r')
-print(''.join([line for line in f]))
+
+# Player enter name
+def enter_username():
+    """
+    enter_username function comments
+    """
+    global username
+    username = input('please enter a username:\n')
+
+    if any(char in string.punctuation for char in username):
+        print('Special character used, please use letters only')
+        enter_username()
+    elif any(char.isdigit() for char in username):
+        print('Number used, please use letters only')
+        enter_username()
+    else:
+        os.system('clear')
+        print('Hello ' + username)
+        board_size()
+
 
 # Instructions
 INSTRUCTIONS = """
@@ -34,30 +51,6 @@ Game Instructions
 
 4. Continue entering guesses until all ships are found.
 """
-print(INSTRUCTIONS)
-
-
-# Player enter name - required
-def enter_username():
-    """
-    enter_username function comments
-    """
-    global username
-    username = input('please enter a username:\n')
-
-    if any(char in string.punctuation for char in username):
-        os.system('clear')
-        print('Special character used, please use letters only')
-        enter_username()
-    elif any(char.isdigit() for char in username):
-        os.system('clear')
-        print('Number used, please use letters only')
-        enter_username()
-    else:
-        os.system('clear')
-        print('Hello ' + username)
-        board_size()
-
 
 # Select board size
 def board_size():
@@ -65,7 +58,18 @@ def board_size():
     board_size function comments
     """
     global size
-    board = input('Select a board size. s = small or l = large:\n')
+    print("""
+    Select a board size,
+
+    - Small
+        - Grid size = 5x5
+        - Hidden ships = 5
+
+    - Large
+        - Grid size = 10x10
+        - Hidden ships = 10
+    """)
+    board = input('Enter s = small or l = large:\n')
 
     if board == 'l':
         size = 10
@@ -87,9 +91,11 @@ def print_board(area):
     print_board fnuction comments
     """
     os.system('clear')
+    f = open('battleships_ascii.txt', 'r')
+    print(''.join([line for line in f]))
+
     for row in area:
         print((" ").join(row))
-
     place_ships()
 
 
@@ -114,6 +120,12 @@ def game_play(ship):
     hits = 0
 
     while hits < len(ship):
+        print(f"""
+
+Make a guess by entering an x and y coordinate when prompted.
+- Coordinates must be numbers between 1 and {len(ship)}
+
+        """)
         attempt_row = input("Enter x coordinate:\n")
         attempt_column = input("Enter y coordinate:\n")
 
@@ -133,12 +145,14 @@ def game_play(ship):
             else:
                 if int(str(attempt_row) + str(attempt_column)) in ship:
                     os.system('clear')
-                    print("Hit")
+                    pf = open('hit_ascii.txt', 'r')
+                    print(''.join([line for line in f]))
                     area[int(attempt_row) - 1][int(attempt_column) - 1] = "X"
                     hits += 1
                 else:
                     os.system('clear')
-                    print("Miss")
+                    pf = open('miss_ascii.txt', 'r')
+                    print(''.join([line for line in f]))
                     area[int(attempt_row) - 1][int(attempt_column) - 1] = "o"
 
             for row in area:
@@ -163,8 +177,12 @@ def game_complete():
         board_size()
     else:
         f = open('goodbye_ascii.txt', 'r')
+        print(''.join([line for line in f]))
         time.sleep(30)
 
 
-# Call functions
+# Run programme
+f = open('battleships_ascii.txt', 'r')
+print(''.join([line for line in f]))
+
 enter_username()

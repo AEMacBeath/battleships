@@ -87,8 +87,8 @@ This site was deployed to Heroku by following the below steps:
 
 ## Credits
 
-- Inital code inspired by ![Trinket](https://trinket.io/python/051179b6d3)
-- anymore?? 
+- Inital code inspired by [Trinket](https://trinket.io/python/051179b6d3)
+- ASCII are from [Patorjk](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=battleships)
 
 ## Future Development
 
