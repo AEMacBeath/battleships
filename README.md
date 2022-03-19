@@ -2,7 +2,7 @@
 
 Battleships is a console based game where the player attempts to guess the location of the hidden ships by entering grid coordinates. This game is aimed at players of all ages looking for a quick and easy game to play.
 
-The players will be able to enter a username, select the board size and play the game. When the game is complete they will be given the option to play again if they want. 
+The players will be able to enter a username, select a board size and play the game. When the game is complete they will be given the option to play again if they want. 
 
 Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
 
@@ -13,10 +13,13 @@ Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
 1. [Game Instructions](#game-instructions)
 2. [User Stories](#user-stories)
 3. [Features](#features)
-    - [Instrcutions Screen](#instructions-screen)
     - [Welcome Screen](#welcome-screen)
-    - [Enter Username](#enter-username)
+    - [Instructions Screen](#instructions-screen)
+    - [Username Validation](#username-validation)
+    - [Select Board Screen](#select-board-screen)
     - [Game Play](#game-play)
+    - [Game Complete Screen](#game-complete-screen)
+    - [Goodbye Screen](#goodbye-screen)
 4. [Technologies Used](#technologies-used)
 5. [Testing](#testing)
     - [Bugs](#bugs)
@@ -40,14 +43,14 @@ Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
 
  4. Continue entering guesses until all ships are found.
 
- 5. Whent the game is complete, to play again enter y (yes) or
+ 5. When the game is complete, to play again enter y (yes) or
     n (no) when prompted.
 
- Enter 'exit' at anytime to close the game.
+ Enter 'exit' at any time to close the game.
 
 ## User Stories
 
-As a user of this site I can
+As a player of this game I can
 - view the game instructions.
 - enter a username of my choice.
 - choose the size of board to play.
@@ -64,8 +67,8 @@ The welcome screen consists of the following elements as shown in the below scre
 
 ![welcome_screen](/readme_scsreenshots/welcome_screen.png)
 
-### Instructions
-The instructions screen is an ordered list of steps required to compelete the game. As shown in the below screenshot.
+### Instructions Screen
+The instructions screen is an ordered list of steps required to complete the game. As shown in the below screenshot.
 
 ![instructions_screen](/readme_scsreenshots/instructions_screen.png)
 
@@ -82,21 +85,20 @@ Special character error
 ![username_special_error](/readme_scsreenshots/username_special_error.png)
 
 ### Select Board Screen
-The select board screen contains information about each board size and an iput for the user to select which one they would like to use. 
+The select board screen contains information about each board size and an input for the user to select which one they would like to use. 
 As shown below.
 
 ![select_board](/readme_scsreenshots/select_board.png)
 
 ### Game play
 
-At the start of the game, the board is made up of .'s printed to the console. As show below.
-![start_game](add screenshot)
-
-The user is then asked to enter x and y coordinates to make their guess <br>
-![enter coords](add screenshot)
+At the start of the game, the board is made up of .'s printed to the console. 
+The user is then asked to enter x and y coordinates to make their guess
+![start_game](/readme_scsreenshots/start_game.png)
 
 After each guess a HIT or MISS message is printed to the console with an updated board showing an X for hit or O for miss. 
-![re-ptrined board](add screenshot)
+![shot_hit](/readme_scsreenshots/shot_hit.png) 
+![shot_miss](/readme_scsreenshots/shot_miss.png)
 
 ### Game Complete Screen
 When the game is complete there is a WINNER message and option to play again. As shown below.
@@ -121,27 +123,32 @@ The goodbye screen which appears when the user selects;
 
 ### Bugs
 
-- to be added (none so far)
+- no bugs found
 
 ### Validator Testing
-- Python - ![PEP8 online](http://pep8online.com/checkresult) <!-- update link with final check -->
+- Python - ![PEP8 online](http://pep8online.com/checkresult)
 
 ## Deployment
 
 This site was deployed to Heroku by following the below steps:
 
-- add steps once complete
+- On [Heroku.com](https://dashboard.heroku.com), create a new app
+- Under the settings tab, set the build packs to 
+    - heroku/python
+    - heroku/nodejs
+- Link the app to the [GitHub Repository](https://github.com/AEMacBeath/battleships)
+- Enable automatic Deploys and click Deploy
 - Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
 
 ## Credits
 
-- Inital code inspired by [Trinket](https://trinket.io/python/051179b6d3)
+- Initial code inspired by [Trinket](https://trinket.io/python/051179b6d3)
 - ASCII are from [Patorjk](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=battleships)
 
 ## Future Development
 
 - Add player board
-    - Player will be able to set the coordinates for thier ships
+    - Player will be able to set the coordinates for their ships
     - The player and computer will then take turns to guess the location of each others ships
 
 - Add attempts counter to show the player how many attempts it took them to locate all the ship

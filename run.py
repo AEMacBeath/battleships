@@ -46,11 +46,12 @@ INSTRUCTIONS = """
 
  4. Continue entering guesses until all ships are found.
 
- 5. Whent the game is complete, to play again enter y (yes) or
+ 5. When the game is complete, to play again enter y (yes) or
     n (no) when prompted.
 
- Enter 'exit' at anytime to close the game.
+ Enter 'exit' at any time to close the game.
 """
+
 
 # Select board size
 def board_size():
@@ -128,7 +129,7 @@ def game_play(ship):
 
         if attempt_row == 'exit':
             exit_game()
-        
+
         attempt_column = input(" >>> Enter y coordinate:\n")
 
         if attempt_column == 'exit':
