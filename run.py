@@ -17,10 +17,7 @@ def enter_username():
     global username
     username = input('please enter a username:\n')
     if username == 'exit':
-        os.system('clear')
-        goodbye = open('goodbye_ascii.txt', 'r')
-        print(''.join([line for line in goodbye]))
-        sys.exit()
+        exit_game()
 
     if any(char in string.punctuation for char in username):
         print('Special character used, please use letters only')
@@ -135,18 +132,12 @@ Make a guess by entering an x and y coordinate when prompted.
         attempt_row = input("Enter x coordinate:\n")
 
         if attempt_row == 'exit':
-            os.system('clear')
-            goodbye = open('goodbye_ascii.txt', 'r')
-            print(''.join([line for line in goodbye]))
-            sys.exit()
+            exit_game()
         
         attempt_column = input("Enter y coordinate:\n")
 
         if attempt_column == 'exit':
-            os.system('clear')
-            goodbye = open('goodbye_ascii.txt', 'r')
-            print(''.join([line for line in goodbye]))
-            sys.exit()
+            exit_game()
 
         try:
             x_coord = int(attempt_row)
@@ -167,12 +158,12 @@ Make a guess by entering an x and y coordinate when prompted.
                     area[int(attempt_row) - 1][int(attempt_column) - 1] = "X"
                     hits += 1
                     hit = open('hit_ascii.txt', 'r')
-                    print(''.join([line for line in hit]))
+                    print(' '.join([line for line in hit]))
                 else:
                     os.system('clear')
                     area[int(attempt_row) - 1][int(attempt_column) - 1] = "o"
                     miss = open('miss_ascii.txt', 'r')
-                    print(''.join([line for line in miss]))
+                    print(' '.join([line for line in miss]))
 
             for row in area:
                 print((" ").join(row))
@@ -198,13 +189,24 @@ def game_complete():
         os.system('clear')
         board_size()
     else:
-        goodbye = open('goodbye_ascii.txt', 'r')
-        print(''.join([line for line in goodbye]))
+        exit_game()
+
+
+# Exit function
+def exit_game():
+    """
+    comments
+    """
+    os.system('clear')
+    print('Thanks for playing')
+    goodbye = open('goodbye_ascii.txt', 'r')
+    print(' '.join([line for line in goodbye]))
+    sys.exit()
 
 
 # Run programme
 welcome = open('welcome_ascii.txt', 'r')
-print(''.join([line for line in welcome]))
+print(' '.join([line for line in welcome]))
 
 view_instructions = input('Open instructions? (y/n):\n')
 
