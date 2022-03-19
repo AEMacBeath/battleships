@@ -12,7 +12,9 @@ username = ''
 # Player enter name
 def enter_username():
     """
-    enter_username function comments
+    enter_username function allows the user to enter a username of thier choice.
+    The username must be letters only.
+    Any other characters will promt the user to try again. 
     """
     global username
     username = input(' >>> please enter a username:\n')
@@ -56,7 +58,8 @@ INSTRUCTIONS = """
 # Select board size
 def board_size():
     """
-    board_size function comments
+    board_size function allows the user to pick a small or large board.
+    The number of ships hidden on the baord is determined by the board size.
     """
     global size
     print(' Hello ' + username)
@@ -90,7 +93,8 @@ def board_size():
 # Print board
 def print_board(area):
     """
-    print_board fnuction comments
+    print_board function prints the board as a .'s to the console.
+    The .'s are later replaced by x / o when shots are made.
     """
     os.system('clear')
 
@@ -102,7 +106,8 @@ def print_board(area):
 # Place ships
 def place_ships():
     """
-    place_ships function comments
+    place_ships function randomly selects the coordinates
+    for each ship on the board.
     """
     ship = []
     for i in range(size):
@@ -114,7 +119,9 @@ def place_ships():
 # Game play
 def game_play(ship):
     """
-    game_play function comments
+    game_play function allows the user to input an x and y corrdinate.
+    checks the input is an integer within the correct range.
+    prints the updated board with HIT or MISS.
     """
     hits = 0
 
@@ -172,7 +179,8 @@ def game_play(ship):
 # Game complete
 def game_complete():
     """
-    game_complete function comments
+    game_complete function prints out a WINNER message.
+    allows the user to play again or leave. 
     """
     global area
     os.system('clear')
@@ -194,7 +202,7 @@ def game_complete():
 # Exit function
 def exit_game():
     """
-    comments
+    exit_game can be called by the user at anytime to stop playing.
     """
     os.system('clear')
     print(' Thanks for playing')
