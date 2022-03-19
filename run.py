@@ -10,6 +10,31 @@ username = ''
 # Welcome message
 print('Welcome to BATTLESHIPS')
 
+
+# Instructions
+INSTRUCTIONS = """
+1. To begin the game please enter a user name below.
+
+2. Select a board size,
+    - Small
+        - Grid size = 5x5
+        - Hidden ships = 5
+
+    - Large
+        - Grid size = 10x10
+        - Hidden ships = 10
+
+3. Make a guess by entering an x and y coordinate as prompted. 
+    - Coordinates must be numbers between
+        - 1 and 5 on a small board
+        - 1 and 10 on a large board
+
+4. Continue entering guesses until all ships are found.
+
+If you would like to quit the game at any time please enter x.
+"""
+print(INSTRUCTIONS)
+
 # Player enter name - required
 def enter_username():
     """
@@ -135,6 +160,7 @@ def game_complete():
     if play_again == 'y':
         board_size()
     else:
+        os.system('clear')
         print('Goodbye, thanks for playing Battleships')
 
 
