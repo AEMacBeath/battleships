@@ -126,7 +126,8 @@ The goodbye screen which appears when the user selects;
 - no bugs found
 
 ### Validator Testing
-- Python - ![PEP8 online](http://pep8online.com/checkresult)
+
+- Python - no errors found whne passing through [PEP8 online](http://pep8online.com/checkresult)
 
 ## Deployment
 

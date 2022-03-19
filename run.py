@@ -12,9 +12,9 @@ username = ''
 # Player enter name
 def enter_username():
     """
-    enter_username function allows the user to enter a username of thier choice.
+    enter_username function allows the user to enter a username.
     The username must be letters only.
-    Any other characters will promt the user to try again. 
+    Any other characters will promt the user to try again.
     """
     global username
     username = input(' >>> please enter a username:\n')
@@ -180,7 +180,7 @@ def game_play(ship):
 def game_complete():
     """
     game_complete function prints out a WINNER message.
-    allows the user to play again or leave. 
+    allows the user to play again or leave.
     """
     global area
     os.system('clear')
