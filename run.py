@@ -15,7 +15,7 @@ def enter_username():
     enter_username function comments
     """
     global username
-    username = input('please enter a username:\n')
+    username = input('>>> please enter a username:\n')
     if username == 'exit':
         exit_game()
 
@@ -52,6 +52,8 @@ Game Instructions
 
 4. Continue entering guesses until all ships are found.
 
+5. Whent the game is complete, to play again enter y (yes) or n (no) when prompted.
+
 Enter 'exit' at anytime to close the game.
 
 """
@@ -74,7 +76,7 @@ def board_size():
         - Grid size = 10x10
         - Hidden ships = 10
     """)
-    board = input('Enter s = small or l = large:\n')
+    board = input('>>> Enter s = small or l = large:\n')
 
     if board == 'l':
         size = 10
@@ -129,12 +131,12 @@ Make a guess by entering an x and y coordinate when prompted.
 - Coordinates must be numbers between 1 and {len(ship)}
 
         """)
-        attempt_row = input("Enter x coordinate:\n")
+        attempt_row = input(">>> Enter x coordinate:\n")
 
         if attempt_row == 'exit':
             exit_game()
         
-        attempt_column = input("Enter y coordinate:\n")
+        attempt_column = input(">>> Enter y coordinate:\n")
 
         if attempt_column == 'exit':
             exit_game()
@@ -182,7 +184,7 @@ def game_complete():
     global area
     os.system('clear')
     print(f'Contgratulations {username}. You sunk all the Battleships')
-    play_again = input('Do you want to play again (y/n)?:\n')
+    play_again = input('>>> Do you want to play again (y/n)?:\n')
 
     if play_again == 'y':
         area = []
@@ -208,7 +210,7 @@ def exit_game():
 welcome = open('welcome_ascii.txt', 'r')
 print(' '.join([line for line in welcome]))
 
-view_instructions = input('Open instructions? (y/n):\n')
+view_instructions = input('>>> Open instructions? (y/n):\n')
 
 if view_instructions == 'y':
     os.system('clear')
