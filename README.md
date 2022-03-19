@@ -26,27 +26,24 @@ Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
 8. [Future Development](#future-development)
 
 ## Game Instructions
-1. Enter a user name to begin the game.
+ Game Instructions
+ 1. Enter a user name to begin the game.
 
-2. Select a board size,
-    - Small
-        - Grid size = 5x5
-        - Hidden ships = 5
+ 2. Select a board size,
+    - Small - Grid size = 5x5 - Hidden ships = 5
+    - Large - Grid size = 10x10 - Hidden ships = 10
 
-    - Large
-        - Grid size = 10x10
-        - Hidden ships = 10
-
-3. Make a guess by entering an x and y coordinate when prompted.
+ 3. Make a guess by entering an x and y coordinate when prompted.
     - Coordinates must be numbers between
         - 1 and 5 on a small board
         - 1 and 10 on a large board
 
-4. Continue entering guesses until all ships are found.
+ 4. Continue entering guesses until all ships are found.
 
-5. Whent the game is complete, to play again enter y (yes) or n (no) when prompted.
+ 5. Whent the game is complete, to play again enter y (yes) or
+    n (no) when prompted.
 
-Enter 'exit' at anytime to close the game.
+ Enter 'exit' at anytime to close the game.
 
 ## User Stories
 
