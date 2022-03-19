@@ -91,8 +91,6 @@ def print_board(area):
     print_board fnuction comments
     """
     os.system('clear')
-    f = open('battleships_ascii.txt', 'r')
-    print(''.join([line for line in f]))
 
     for row in area:
         print((" ").join(row))
@@ -169,11 +167,14 @@ def game_complete():
     """
     game_complete function comments
     """
+    global area
     os.system('clear')
     print(f'Contgratulations {username}. You sunk all the Battleships')
     play_again = input('Do you want to play again (y/n)?:\n')
 
     if play_again == 'y':
+        area = []
+        os.system('clear')
         board_size()
     else:
         f = open('goodbye_ascii.txt', 'r')
@@ -182,7 +183,7 @@ def game_complete():
 
 
 # Run programme
-f = open('battleships_ascii.txt', 'r')
+f = open('welcome_ascii.txt', 'r')
 print(''.join([line for line in f]))
 
 enter_username()
