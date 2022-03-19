@@ -13,6 +13,7 @@ Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
 1. [Game Instructions](#game-instructions)
 2. [User Stories](#user-stories)
 3. [Features](#features)
+    - [Instrcutions Screen](#instructions-screen)
     - [Welcome Screen](#welcome-screen)
     - [Enter Username](#enter-username)
     - [Game Play](#game-play)
@@ -50,21 +51,25 @@ Enter 'exit' at anytime to close the game.
 ## User Stories
 
 As a user of this site I can
-- enter a username of my choice
-- choose the size of board to play
-- play the game
-- restart the game
+- view the game instructions.
+- enter a username of my choice.
+- choose the size of board to play.
+- play the game.
+- restart the game.
 
 ## Features
 
 ### Welcome Screen
 
 The welcome screen consists of the following elements as shown in the below screenshot.
-- A WELCOME TO BATTLESHIPS! message.
-- Game instructions.
-- An input section for users to add a username of their choice.
+- A WELCOME message written with ASCII art.
+- An option to view the game instructions.
 
-![Welcome_screen]()
+![Welcome_screen](/readme_scsreenshots/welcome_screen.png)
+
+### Instructions
+The instructions screen consists of the following elements as shown in the below screenshot.
+- 
 
 ### Enter username
 A message to ask users to enter a username<br>
