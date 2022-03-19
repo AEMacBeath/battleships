@@ -107,7 +107,6 @@ def place_ships():
     for i in range(size):
         ship.append(int(str(random.randint(1, size)) + str(
                     random.randint(1, size))))
-    print(ship)  # Remove
     game_play(ship)
 
 
@@ -163,7 +162,6 @@ def game_play(ship):
 
             for row in area:
                 print((" ").join(row))
-            print(ship)
         else:
             print(' Please enter numbers only.')
 

@@ -89,7 +89,7 @@ As shown below.
 
 ### Game play
 
-At the start of the game, the board is made up of .'s printed to the console<br>
+At the start of the game, the board is made up of .'s printed to the console. As show below.
 ![start_game](add screenshot)
 
 The user is then asked to enter x and y coordinates to make their guess <br>
@@ -98,10 +98,9 @@ The user is then asked to enter x and y coordinates to make their guess <br>
 After each guess a HIT or MISS message is printed to the console with an updated board showing an X for hit or O for miss. 
 ![re-ptrined board](add screenshot)
 
-When the game is complete there is a Congratulations message and option to play again.
-![game complete](add screenshot)
-
 ### Game Complete Screen
+When the game is complete there is a WINNER message and option to play again. As shown below.
+![game_complete](/readme_scsreenshots/game_complete.png)
 
 ### Goodbye screen
 The goodbye screen which appears when the user selects;
