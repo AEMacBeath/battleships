@@ -1,7 +1,7 @@
 import random
 import string
 import os
-import time
+import sys
 
 # Global variables
 size = 0
@@ -50,6 +50,8 @@ Game Instructions
         - 1 and 10 on a large board
 
 4. Continue entering guesses until all ships are found.
+
+Enter exit at anytime to close the game. 
 """
 
 # Select board size
@@ -125,7 +127,20 @@ Make a guess by entering an x and y coordinate when prompted.
 
         """)
         attempt_row = input("Enter x coordinate:\n")
+
+        if attempt_row == 'exit':
+            os.system('clear')
+            goodbye = open('goodbye_ascii.txt', 'r')
+            print(''.join([line for line in goodbye]))
+            sys.exit()
+        
         attempt_column = input("Enter y coordinate:\n")
+
+        if attempt_column == 'exit':
+            os.system('clear')
+            goodbye = open('goodbye_ascii.txt', 'r')
+            print(''.join([line for line in goodbye]))
+            sys.exit()
 
         try:
             x_coord = int(attempt_row)
@@ -179,11 +194,12 @@ def game_complete():
     else:
         goodbye = open('goodbye_ascii.txt', 'r')
         print(''.join([line for line in goodbye]))
-        time.sleep(5)
 
 
 # Run programme
 welcome = open('welcome_ascii.txt', 'r')
 print(''.join([line for line in welcome]))
+
+print(INSTRUCTIONS)
 
 enter_username()
