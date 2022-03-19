@@ -16,6 +16,11 @@ def enter_username():
     """
     global username
     username = input('please enter a username:\n')
+    if username == 'exit':
+        os.system('clear')
+        goodbye = open('goodbye_ascii.txt', 'r')
+        print(''.join([line for line in goodbye]))
+        sys.exit()
 
     if any(char in string.punctuation for char in username):
         print('Special character used, please use letters only')
