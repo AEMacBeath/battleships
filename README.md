@@ -62,20 +62,35 @@ The welcome screen consists of the following elements as shown in the below scre
 - A WELCOME message written with ASCII art.
 - An option to view the game instructions.
 
-![Welcome_screen](/readme_scsreenshots/welcome_screen.png)
+![welcome_screen](/readme_scsreenshots/welcome_screen.png)
 
 ### Instructions
-The instructions screen consists of the following elements as shown in the below screenshot.
-- 
+The instructions screen is an ordered list of steps required to compelete the game. As shown in the below screenshot.
 
-### Enter username
-A message to ask users to enter a username<br>
-![Enter nickname message](add screenshot)
+![instructions_screen](/readme_scsreenshots/instructions_screen.png)
+
+### Username Validation
+The players username should contain letters only. 
+The follow error messages will appear if the user attempts to enter any other characters.
+
+Number error
+
+![username_number_error](/readme_scsreenshots/username_number_error.png)
+
+Special character error
+
+![username_special_error](/readme_scsreenshots/username_special_error.png)
+
+### Select Board Screen
+The select board screen contains information about each board size and an iput for the user to select which one they would like to use. 
+As shown below.
+
+![select_board](/readme_scsreenshots/select_board.png)
 
 ### Game play
 
 At the start of the game, the board is made up of .'s printed to the console<br>
-![Starting game screenshot](add screenshot)
+![start_game](add screenshot)
 
 The user is then asked to enter x and y coordinates to make their guess <br>
 ![enter coords](add screenshot)
@@ -86,12 +101,23 @@ After each guess a HIT or MISS message is printed to the console with an updated
 When the game is complete there is a Congratulations message and option to play again.
 ![game complete](add screenshot)
 
+### Game Complete Screen
+
+### Goodbye screen
+The goodbye screen which appears when the user selects;
+    - No to playing again.
+    - Exit at any time during the game.
+
+![goodbye_screen](/readme_scsreenshots/goodbye_screen.png)
+
 ## Technologies used
 
 - Python3
 - GitHub
 - GitPod
 - Heroku
+- ASCII art
+
 ## Testing
 
 ### Bugs

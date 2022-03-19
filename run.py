@@ -177,7 +177,11 @@ def game_complete():
     """
     global area
     os.system('clear')
-    print(f' Contgratulations {username}. You sunk all the Battleships')
+    congrats = open('congrats_ascii.txt', 'r')
+    print(' '.join([line for line in congrats]))
+    print(f"""{username}, you sunk all the Battleships
+    
+    """)
     play_again = input(' >>> Do you want to play again (y/n)?:\n')
 
     if play_again == 'y':
