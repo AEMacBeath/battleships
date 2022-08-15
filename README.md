@@ -123,7 +123,11 @@ The goodbye screen which appears when the user selects;
 
 ### Bugs
 
-- no bugs found
+#### Fixed bugs
+1.  _Open Instructions? (y/n)_ on the [Welcome Screen](#welcome-screen) accepts invalid/empty inputs
+    -   Fix: Define open_instrcutions function to catch invalid / empty inputs.
+
+
 
 ### Validator Testing
 

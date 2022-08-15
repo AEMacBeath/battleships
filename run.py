@@ -9,27 +9,24 @@ area = []
 username = ''
 
 
-# Player enter name
-def enter_username():
+# View Instrucions
+def open_instructions():
     """
-    enter_username function allows the user to enter a username.
-    The username must be letters only.
-    Any other characters will promt the user to try again.
+    open_instructions function allows the user to select
+    if they want to view the game instructions.
     """
-    global username
-    username = input(' >>> please enter a username:\n')
-    if username == 'exit':
-        exit_game()
+    view_instructions = input(' >>> Open instructions? (y/n):\n')
 
-    if any(char in string.punctuation for char in username):
-        print(' Special character used, please use letters only')
+    if view_instructions == 'y':
+        os.system('clear')
+        print(INSTRUCTIONS)
         enter_username()
-    elif any(char.isdigit() for char in username):
-        print(' Number used, please use letters only')
+    elif view_instructions == 'n':
         enter_username()
     else:
-        os.system('clear')
-        board_size()
+        print(
+            ' >>> Please select if you would like to view the game instructions.')
+        open_instructions()
 
 
 # Instructions
@@ -53,6 +50,29 @@ INSTRUCTIONS = """
 
  Enter 'exit' at any time to close the game.
 """
+
+
+# Player enter name
+def enter_username():
+    """
+    enter_username function allows the user to enter a username.
+    The username must be letters only.
+    Any other characters will promt the user to try again.
+    """
+    global username
+    username = input(' >>> please enter a username:\n')
+    if username == 'exit':
+        exit_game()
+
+    if any(char in string.punctuation for char in username):
+        print(' Special character used, please use letters only')
+        enter_username()
+    elif any(char.isdigit() for char in username):
+        print(' Number used, please use letters only')
+        enter_username()
+    else:
+        os.system('clear')
+        board_size()
 
 
 # Select board size
@@ -215,10 +235,4 @@ def exit_game():
 welcome = open('welcome_ascii.txt', 'r')
 print(' '.join([line for line in welcome]))
 
-view_instructions = input(' >>> Open instructions? (y/n):\n')
-
-if view_instructions == 'y':
-    os.system('clear')
-    print(INSTRUCTIONS)
-
-enter_username()
+open_instructions()
