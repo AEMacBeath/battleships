@@ -133,11 +133,59 @@ def place_ships():
     for i in range(size):
         ship.append(int(str(random.randint(1, size)) + str(
                     random.randint(1, size))))
-    game_play(ship)
 
+    game_play(ship, 0, 0)
+
+# X Coordinate error check
+def x_guess(ship, attempt_row):
+    """
+    add docustring
+    """
+    attempt_row = input(f" >>> Enter x coordinate from 1 and {len(ship)}: ")
+
+    if attempt_row == 'exit':
+        exit_game()
+
+    if attempt_row == "":
+        print(f' Error: please enter a value')
+        x_guess(ship, attempt_row)
+
+    try:
+        x_coord = int(attempt_row)
+    except:
+        print(f' Error: {attempt_row} is not a valid entry')
+        x_guess(ship, attempt_row)
+    
+    if int(attempt_row) > len(ship) or int(attempt_row) < 1:
+        print(' Coordinate outside of board. Please try again.')
+        x_guess(ship, attempt_row)
+
+# Y Coordinate error check
+def y_guess(ship, attempt_column):
+    """
+    add docustring
+    """
+    attempt_column = input(f" >>> Enter y coordinate from 1 and {len(ship)}: ")
+
+    if attempt_column == 'exit':
+        exit_game()
+
+    if attempt_column == "":
+        print(' Error: please enter a value')
+        y_guess(ship, attempt_column)
+
+    try:
+        y_coord = int(attempt_column)
+    except:
+        print(f' Error: {attempt_column} is not a valid entry.')
+        y_guess(ship, attempt_column)
+
+    if int(attempt_column) > len(ship) or int(attempt_column) < 1:
+        print(' Coordinate outside of board. Please try again.')
+        y_guess(ship, attempt_column)
 
 # Game play
-def game_play(ship):
+def game_play(ship, attempt_row, attempt_column):
     """
     game_play function allows the user to input an x and y corrdinate.
     checks the input is an integer within the correct range.
@@ -146,52 +194,25 @@ def game_play(ship):
     hits = 0
 
     while hits < len(ship):
-        print(f"""
 
- Make a guess by entering an x and y coordinate when prompted.
- - Coordinates must be numbers between 1 and {len(ship)}
+        x_guess(ship, attempt_row)
 
-        """)
-        attempt_row = input(" >>> Enter x coordinate:\n")
+        y_guess(ship, attempt_column)
 
-        if attempt_row == 'exit':
-            exit_game()
-
-        attempt_column = input(" >>> Enter y coordinate:\n")
-
-        if attempt_column == 'exit':
-            exit_game()
-
-        try:
-            x_coord = int(attempt_row)
-        except:
-            print(f' Error: {attempt_row} is not a valid entry')
-
-        try:
-            y_coord = int(attempt_column)
-        except:
-            print(f' Error: {attempt_column} is not a valid entry')
-
-        if str(attempt_row).isdigit() and str(attempt_column).isdigit():
-            if int(attempt_row) > len(ship) or int(attempt_column) > len(ship):
-                print(' Coordinates outside of board. Please try again.')
-            else:
-                if int(str(attempt_row) + str(attempt_column)) in ship:
-                    os.system('clear')
-                    area[int(attempt_row) - 1][int(attempt_column) - 1] = "X"
-                    hits += 1
-                    hit = open('hit_ascii.txt', 'r')
-                    print(' '.join([line for line in hit]))
-                else:
-                    os.system('clear')
-                    area[int(attempt_row) - 1][int(attempt_column) - 1] = "o"
-                    miss = open('miss_ascii.txt', 'r')
-                    print(' '.join([line for line in miss]))
-
-            for row in area:
-                print((" ").join(row))
+        if int(str(attempt_row) + str(attempt_column)) in ship:
+            os.system('clear')
+            area[int(attempt_row) - 1][int(attempt_column) - 1] = "X"
+            hits += 1
+            hit = open('hit_ascii.txt', 'r')
+            print(' '.join([line for line in hit]))
         else:
-            print(' Please enter numbers only.')
+            os.system('clear')
+            area[int(attempt_row) - 1][int(attempt_column) - 1] = "o"
+            miss = open('miss_ascii.txt', 'r')
+            print(' '.join([line for line in miss]))
+
+        for row in area:
+            print((" ").join(row))
 
     game_complete()
 
