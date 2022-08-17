@@ -148,17 +148,20 @@ def x_guess(ship, attempt_row):
 
     if attempt_row == "":
         print(f' Error: please enter a value')
-        x_guess(ship, attempt_row)
+        return x_guess(ship, attempt_row)
 
     try:
         x_coord = int(attempt_row)
     except:
         print(f' Error: {attempt_row} is not a valid entry')
-        x_guess(ship, attempt_row)
+        return x_guess(ship, attempt_row)
     
     if int(attempt_row) > len(ship) or int(attempt_row) < 1:
         print(' Coordinate outside of board. Please try again.')
-        x_guess(ship, attempt_row)
+        return x_guess(ship, attempt_row)
+
+    return attempt_row
+
 
 # Y Coordinate error check
 def y_guess(ship, attempt_column):
@@ -172,17 +175,20 @@ def y_guess(ship, attempt_column):
 
     if attempt_column == "":
         print(' Error: please enter a value')
-        y_guess(ship, attempt_column)
+        return y_guess(ship, attempt_column)
 
     try:
         y_coord = int(attempt_column)
     except:
         print(f' Error: {attempt_column} is not a valid entry.')
-        y_guess(ship, attempt_column)
+        return y_guess(ship, attempt_column)
 
     if int(attempt_column) > len(ship) or int(attempt_column) < 1:
         print(' Coordinate outside of board. Please try again.')
-        y_guess(ship, attempt_column)
+        return y_guess(ship, attempt_column)
+
+    return attempt_column
+
 
 # Game play
 def game_play(ship, attempt_row, attempt_column):
@@ -195,19 +201,19 @@ def game_play(ship, attempt_row, attempt_column):
 
     while hits < len(ship):
 
-        x_guess(ship, attempt_row)
+        coord_x = x_guess(ship, attempt_row)
 
-        y_guess(ship, attempt_column)
+        coord_y = y_guess(ship, attempt_column)
 
-        if int(str(attempt_row) + str(attempt_column)) in ship:
+        if int(str(coord_x) + str(coord_y)) in ship:
             os.system('clear')
-            area[int(attempt_row) - 1][int(attempt_column) - 1] = "X"
+            area[int(coord_x) - 1][int(coord_y) - 1] = "X"
             hits += 1
             hit = open('hit_ascii.txt', 'r')
             print(' '.join([line for line in hit]))
         else:
             os.system('clear')
-            area[int(attempt_row) - 1][int(attempt_column) - 1] = "o"
+            area[int(coord_x) - 1][int(coord_y) - 1] = "o"
             miss = open('miss_ascii.txt', 'r')
             print(' '.join([line for line in miss]))
 
