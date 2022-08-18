@@ -154,13 +154,13 @@ def x_guess(ship, attempt_row):
         exit_game()
 
     if attempt_row == "":
-        print(f' Error: please enter a value')
+        print(' Please enter a value')
         return x_guess(ship, attempt_row)
 
     try:
         x_coord = int(attempt_row)
     except:
-        print(f' Error: {attempt_row} is not a valid entry')
+        print(f'{attempt_row} is not a valid entry. Please try again.')
         return x_guess(ship, attempt_row)
     
     if int(attempt_row) > len(ship) or int(attempt_row) < 1:
