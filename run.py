@@ -136,10 +136,13 @@ def place_ships():
 
     game_play(ship, 0, 0)
 
+
 # X Coordinate error check
 def x_guess(ship, attempt_row):
     """
-    add docustring
+    x_guess function checks that the users x coordinate input is valid
+    by checking it is not outwith the borad (< 1 or > board length),
+    it is a number and a value has been entered.
     """
     attempt_row = input(f" >>> Enter x coordinate from 1 and {len(ship)}: ")
 
@@ -166,7 +169,9 @@ def x_guess(ship, attempt_row):
 # Y Coordinate error check
 def y_guess(ship, attempt_column):
     """
-    add docustring
+    y_guess function checks that the users y coordinate input is valid
+    by checking it is not outwith the borad (< 1 or > board length),
+    it is a number and a value has been entered.
     """
     attempt_column = input(f" >>> Enter y coordinate from 1 and {len(ship)}: ")
 
@@ -198,6 +203,7 @@ def game_play(ship, attempt_row, attempt_column):
     prints the updated board with HIT or MISS.
     """
     hits = 0
+    attempts = []
 
     while hits < len(ship):
 
@@ -205,20 +211,29 @@ def game_play(ship, attempt_row, attempt_column):
 
         coord_y = y_guess(ship, attempt_column)
 
-        if int(str(coord_x) + str(coord_y)) in ship:
+        attempt = int(str(coord_x + coord_y))
+
+        if attempt in attempts:
             os.system('clear')
+            print('You have already guessed those coordinates. Please try again.')
+        
+        elif int(str(coord_x) + str(coord_y)) in ship:
+            # os.system('clear')
             area[int(coord_x) - 1][int(coord_y) - 1] = "X"
             hits += 1
             hit = open('hit_ascii.txt', 'r')
             print(' '.join([line for line in hit]))
         else:
-            os.system('clear')
+            # os.system('clear')
             area[int(coord_x) - 1][int(coord_y) - 1] = "o"
             miss = open('miss_ascii.txt', 'r')
             print(' '.join([line for line in miss]))
 
         for row in area:
             print((" ").join(row))
+
+        attempts.append(attempt)
+        print(attempts)
 
     game_complete()
 

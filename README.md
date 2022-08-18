@@ -125,8 +125,12 @@ The goodbye screen which appears when the user selects;
 
 #### Fixed bugs
 1.  _Open Instructions? (y/n)_ on the [Welcome Screen](#welcome-screen) accepts invalid/empty inputs
-    -   Fix: Define open_instrcutions function to catch invalid / empty inputs.
-
+    -   Fix: Defined open_instrcutions function to catch invalid / empty inputs.
+2.  GamePlay function accepts 0 as x and y coordinate when the instructions state to enter only between 1 and 5.
+    -   Fix: Created, x_guess and y_guess, functions to check user input for errors. 
+3.  When users enter coordinates that have already been entered, there is no feedback provided.
+    -   Fix: Added attempts array to record the attempt values and an if statment to check if new enteries have already been entered.
+4.  
 
 
 ### Validator Testing
