@@ -9,7 +9,7 @@ area = []
 username = ''
 
 
-# View Instrucions
+# View Instructions
 def open_instructions():
     """
     open_instructions function allows the user to select
@@ -58,7 +58,7 @@ def enter_username():
     """
     enter_username function allows the user to enter a username.
     The username must be letters only.
-    Any other characters will promt the user to try again.
+    Any other characters will prompt the user to try again.
     """
     global username
     username = input(' >>> Enter a username:\n')
@@ -85,7 +85,7 @@ def enter_username():
 def board_size():
     """
     board_size function allows the user to pick a small or large board.
-    The number of ships hidden on the baord is determined by the board size.
+    The number of ships hidden on the board is determined by the board size.
     """
     global size
     print(' Hello ' + username)
@@ -136,10 +136,11 @@ def place_ships():
     for each ship on the board.
     """
     ship = []
+    print(size)
     for i in range(size):
         ship.append(int(str(random.randint(1, size)) + str(
                     random.randint(1, size))))
-
+    print(ship)
     game_play(ship, 0, 0)
 
 
@@ -147,7 +148,7 @@ def place_ships():
 def x_guess(ship, attempt_row):
     """
     x_guess function checks that the users x coordinate input is valid
-    by checking it is not outwith the borad (< 1 or > board length),
+    by checking it is not out with the board (< 1 or > board length),
     it is a number and a value has been entered.
     """
     attempt_row = input(f" >>> Enter x coordinate from 1 and {len(ship)}: ")
@@ -176,7 +177,7 @@ def x_guess(ship, attempt_row):
 def y_guess(ship, attempt_column):
     """
     y_guess function checks that the users y coordinate input is valid
-    by checking it is not outwith the borad (< 1 or > board length),
+    by checking it is not out with the board (< 1 or > board length),
     it is a number and a value has been entered.
     """
     attempt_column = input(f" >>> Enter y coordinate from 1 and {len(ship)}: ")
@@ -204,7 +205,7 @@ def y_guess(ship, attempt_column):
 # Game play
 def game_play(ship, attempt_row, attempt_column):
     """
-    game_play function allows the user to input an x and y corrdinate.
+    game_play function allows the user to input an x and y coordinate.
     checks the input is an integer within the correct range.
     prints the updated board with HIT or MISS.
     """

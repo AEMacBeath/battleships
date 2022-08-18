@@ -128,7 +128,9 @@ Python - no errors found when passing through [PEP8 online](http://pep8online.co
 4.  Play again? (y/n) accepts empty and invalid inputs.
     -   Fix: Created restart_game function to check the user input and provide feedback if the input is invalid.
 5.  Enter username accepts empty values.
-    -   Added if statement to check if a value has been entered before running further checks. 
+    -   Fix: Added if statement to check if a value has been entered before running further checks.
+6.  Place ships not allocating coorect number of ships on some goes.
+    -   Fix: 
 
 
 ## Deployment
