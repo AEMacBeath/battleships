@@ -233,32 +233,42 @@ def game_play(ship, attempt_row, attempt_column):
             print((" ").join(row))
 
         attempts.append(attempt)
-        print(attempts)
 
     game_complete()
+
+
+# Restart game / play again
+def restart_game():
+    """
+    restart_game function allows the user to 
+    restart or exit the game.
+    """
+    play_again = input(' >>> Do you want to play again (y/n)?:\n')
+
+    global area
+
+    if play_again == 'n':
+        exit_game()
+    elif play_again == 'y':
+        area = []
+        os.system('clear')
+        board_size()
+    else:
+        print('Please select if you would like to play again.')
+        restart_game()
 
 
 # Game complete
 def game_complete():
     """
     game_complete function prints out a WINNER message.
-    allows the user to play again or leave.
+    and triggers the restart_game function.
     """
-    global area
-    os.system('clear')
     winner = open('winner_ascii.txt', 'r')
     print(' '.join([line for line in winner]))
-    print(f"""{username}, you sunk all the Battleships
+    print(f"{username}, you sunk all the Battleships")
 
-    """)
-    play_again = input(' >>> Do you want to play again (y/n)?:\n')
-
-    if play_again == 'y':
-        area = []
-        os.system('clear')
-        board_size()
-    else:
-        exit_game()
+    restart_game()
 
 
 # Exit function

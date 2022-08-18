@@ -130,7 +130,10 @@ The goodbye screen which appears when the user selects;
     -   Fix: Created, x_guess and y_guess, functions to check user input for errors. 
 3.  When users enter coordinates that have already been entered, there is no feedback provided.
     -   Fix: Added attempts array to record the attempt values and an if statment to check if new enteries have already been entered.
-4.  
+4.  Play again? (y/n) accepts empty and invalid inputs.
+    -   Fix: Created restart_game funcation to check the user input and provide feedback if the ipnut is invalid.
+
+0.  Instructions state L board has 10 ships. Only 9 where placed on the board.
 
 
 ### Validator Testing
@@ -157,7 +160,7 @@ This site was deployed to Heroku by following the below steps:
 ## Future Development
 
 - Add player board
-    - Player will be able to set the coordinates for their ships
-    - The player and computer will then take turns to guess the location of each others ships
+    - Player will be able to set the coordinates for their ships.
+    - The player and computer will then take turns to guess the location of each others ships.
 
-- Add attempts counter to show the player how many attempts it took them to locate all the ship
+- Add attempts counter to show the player how many attempts it took them to locate all the ships.
