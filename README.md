@@ -6,30 +6,13 @@ The players will be able to enter a username, select a board size and play the g
 
 Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
 
-![am_i_responsive_screenshot](/readme_scsreenshots/am_i_responsive_screenshot.png)
+![responsive_screenshot](/readme_scsreenshots/responsive_screenshot.png)
 
 ## Table of Contents
 
 1. [Game Instructions](#game-instructions)
-2. [User Stories](#user-stories)
-3. [Features](#features)
-    - [Welcome Screen](#welcome-screen)
-    - [Instructions Screen](#instructions-screen)
-    - [Username Validation](#username-validation)
-    - [Select Board Screen](#select-board-screen)
-    - [Game Play](#game-play)
-    - [Game Complete Screen](#game-complete-screen)
-    - [Goodbye Screen](#goodbye-screen)
-4. [Technologies Used](#technologies-used)
-5. [Testing](#testing)
-    - [Bugs](#bugs)
-    - [Validator Testing](#validator-testing)
-6. [Deployment](#deployment)
-7. [Credits](#credits)
-8. [Future Development](#future-development)
 
 ## Game Instructions
- Game Instructions
  1. Enter a user name to begin the game.
 
  2. Select a board size,
@@ -49,23 +32,19 @@ Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
  Enter 'exit' at any time to close the game.
 
 ## User Stories
-
 As a player of this game I can
 - view the game instructions.
 - enter a username of my choice.
 - choose the size of board to play.
 - play the game.
 - restart the game.
+- exit the game
 
-## Flow Diagram
-
-### Application flow diagram
+## Application flow diagram
 ![flow_diagram](/readme_scsreenshots/flow_diagram.png)
 
 ## Features
-
 ### Welcome Screen
-
 The welcome screen consists of the following elements as shown in the below screenshot.
 - A WELCOME message written with ASCII art.
 - An option to view the game instructions.
@@ -77,36 +56,31 @@ The instructions screen is an ordered list of steps required to complete the gam
 
 ![instructions_screen](/readme_scsreenshots/instructions_screen.png)
 
-### Username Validation
-The players username should contain letters only. 
-The follow error messages will appear if the user attempts to enter any other characters.
-
-Number error
-
-![username_number_error](/readme_scsreenshots/username_number_error.png)
-
-Special character error
-
-![username_special_error](/readme_scsreenshots/username_special_error.png)
-
-No value error
-![username_novalue_error](/readme_scsreenshots/username_novalue_error.png)
-
 ### Select Board Screen
 The select board screen contains information about each board size and an input for the user to select which one they would like to use. 
 As shown below.
 
-![select_board](/readme_scsreenshots/select_board.png)
+![board_selection](/readme_scsreenshots/board_selection.png)
 
 ### Game play
-
 At the start of the game, the board is made up of .'s printed to the console. 
-The user is then asked to enter x and y coordinates to make their guess
-![start_game](/readme_scsreenshots/start_game.png)
+The user is then asked to enter x and y coordinates.
 
-After each guess a HIT or MISS message is printed to the console with an updated board showing an X for hit or O for miss. 
-![shot_hit](/readme_scsreenshots/shot_hit.png) 
-![shot_miss](/readme_scsreenshots/shot_miss.png)
+#### 5x5 Board
+![game_play_5x5](/readme_scsreenshots/game_play_5x5.png)
+
+#### 10x10 Board
+![game_play_10x10](/readme_scsreenshots/game_play_10x10.png)
+
+#### Board with shots taken
+![game_play_shots](/readme_scsreenshots/game_play_shots.png)
+
+#### Shot feedback
+After each shot a HIT or MISS message is printed to the console with an updated board showing an X for hit or O for miss. 
+
+![hit_ascii](/readme_scsreenshots/hit_ascii.png)
+
+![miss_ascii](/readme_scsreenshots/miss_ascii.png)
 
 ### Game Complete Screen
 When the game is complete there is a WINNER message and option to play again. As shown below.
@@ -114,8 +88,8 @@ When the game is complete there is a WINNER message and option to play again. As
 
 ### Goodbye screen
 The goodbye screen which appears when the user selects;
-    - No to playing again.
-    - Exit at any time during the game.
+- No to playing again.
+- Exit at any time during the game.
 
 ![goodbye_screen](/readme_scsreenshots/goodbye_screen.png)
 
@@ -126,27 +100,14 @@ The goodbye screen which appears when the user selects;
 - GitPod
 - Heroku
 - ASCII art
+- [Lucid](https://lucid.app/) to create flow chart
 
 ## Testing
 
-### Bugs
+### Feature testing
+Run [heroku app](https://battleships-am.herokuapp.com/)
 
-#### Fixed bugs
-1.  _Open Instructions? (y/n)_ on the [Welcome Screen](#welcome-screen) accepts invalid/empty inputs
-    -   Fix: Defined open_instrcutions function to catch invalid / empty inputs.
-2.  GamePlay function accepts 0 as x and y coordinate when the instructions state to enter only between 1 and 5.
-    -   Fix: Created, x_guess and y_guess, functions to check user input for errors. 
-3.  When users enter coordinates that have already been entered, there is no feedback provided.
-    -   Fix: Added attempts array to record the attempt values and an if statment to check if new enteries have already been entered.
-4.  Play again? (y/n) accepts empty and invalid inputs.
-    -   Fix: Created restart_game funcation to check the user input and provide feedback if the ipnut is invalid.
-5.  Enter username accepts empty values.
-    -   Added if statement to check if a value has been entered before running further checks. 
-
-#### Feature testing
-Run [heroku app](https://battleships-am.herokuapp.com/) to load welcome screen
-
-##### [Welcome Screen](#welcome-screen)
+#### [Welcome Screen](#welcome-screen)
 -  Welcome ascii art loads
 -  _Open instructions? (y/n)_ visible and waiting for user input
 
@@ -155,10 +116,12 @@ Try entering the below invalid inputs
 -   Anything except y or n
 -   No value
 
+Error feedback
+
 Enter y - opens Instructions Screen
 Enter n - _Enter a username?_ visible and waiting for user input
 
-##### [Instructions Screen](#instructions-screen)
+#### [Instructions Screen](#instructions-screen)
 -   Game instructions load
 -   _Enter a username?_ visible and waiting for user input
 
@@ -170,7 +133,7 @@ Try entering the below invalid inputs
 
 Enter a valid username - goes to Select Board Size Screen
 
-##### [Select Board Screen](#select-board-screen)
+#### [Select Board Screen](#select-board-screen)
 -   Board options and information loads
 -   _Enter s for small or l for large_ visible and waiting for user input
 
@@ -181,7 +144,7 @@ Try entering the below invalid inputs
 
 Enter s or l - goes to Game Play screen
 
-##### [Game Play](#game-play)
+#### [Game Play](#game-play)
 -   Board loads as .'s (5 x 5 or 10 x 10 depending on board selection)
 -   _Enter x coordinate from..._ visible and waiting for user input
 
@@ -208,7 +171,7 @@ Try entering the below invalid inputs
 
 Play the game until all ships are found - goes to Game Complete Screen
 
-###### [Game Complete Screen](#game-complete-screen)
+##### [Game Complete Screen](#game-complete-screen)
 -   Winner ascii loads
 -   _Do you want to play again? (y/n)_ visible and waiting for user input
 
@@ -221,12 +184,25 @@ Try entering the below invalid inputs
 Enter y - goes back to Select Board Screen
 Enter n - goes to Goodbye Screen
 
-###### [Goodbye Screen](#goodbye-screen)
+##### [Goodbye Screen](#goodbye-screen)
 -   Goodbye ascii loads
 
 ### Validator Testing
 
 - Python - no errors found whne passing through [PEP8 online](http://pep8online.com/checkresult)
+
+### Bugs
+#### Fixed bugs
+1.  _Open Instructions? (y/n)_ on the [Welcome Screen](#welcome-screen) accepts invalid/empty inputs
+    -   Fix: Defined open_instrcutions function to catch invalid / empty inputs.
+2.  GamePlay function accepts 0 as x and y coordinate when the instructions state to enter only between 1 and 5.
+    -   Fix: Created, x_guess and y_guess, functions to check user input for errors. 
+3.  When users enter coordinates that have already been entered, there is no feedback provided.
+    -   Fix: Added attempts array to record the attempt values and an if statment to check if new enteries have already been entered.
+4.  Play again? (y/n) accepts empty and invalid inputs.
+    -   Fix: Created restart_game funcation to check the user input and provide feedback if the ipnut is invalid.
+5.  Enter username accepts empty values.
+    -   Added if statement to check if a value has been entered before running further checks. 
 
 ## Deployment
 

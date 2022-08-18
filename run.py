@@ -160,7 +160,7 @@ def x_guess(ship, attempt_row):
     try:
         x_coord = int(attempt_row)
     except:
-        print(f'{attempt_row} is not a valid entry. Please try again.')
+        print(f' {attempt_row} is not a valid entry. Please try again.')
         return x_guess(ship, attempt_row)
     
     if int(attempt_row) > len(ship) or int(attempt_row) < 1:
@@ -219,7 +219,7 @@ def game_play(ship, attempt_row, attempt_column):
 
         if attempt in attempts:
             os.system('clear')
-            print('You have already guessed those coordinates. Please try again.')
+            print(' You have already guessed those coordinates. Please try again.')
         
         elif int(str(coord_x) + str(coord_y)) in ship:
             # os.system('clear')
@@ -258,7 +258,7 @@ def restart_game():
         os.system('clear')
         board_size()
     else:
-        print('Please select if you would like to play again.')
+        print(' Please enter y or n to select if you would like to play again.')
         restart_game()
 
 
@@ -270,7 +270,7 @@ def game_complete():
     """
     winner = open('winner_ascii.txt', 'r')
     print(' '.join([line for line in winner]))
-    print(f"{username}, you sunk all the Battleships")
+    print(f" {username}, you sunk all the Battleships")
 
     restart_game()
 
