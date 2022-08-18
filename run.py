@@ -136,11 +136,9 @@ def place_ships():
     for each ship on the board.
     """
     ship = []
-    print(size)
     for i in range(size):
         ship.append(int(str(random.randint(1, size)) + str(
                     random.randint(1, size))))
-    print(ship)
     game_play(ship, 0, 0)
 
 
