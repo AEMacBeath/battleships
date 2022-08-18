@@ -132,8 +132,9 @@ The goodbye screen which appears when the user selects;
     -   Fix: Added attempts array to record the attempt values and an if statment to check if new enteries have already been entered.
 4.  Play again? (y/n) accepts empty and invalid inputs.
     -   Fix: Created restart_game funcation to check the user input and provide feedback if the ipnut is invalid.
-
-0.  Instructions state L board has 10 ships. Only 9 where placed on the board.
+5.  Enter username accepts empty values.
+    -   Added if statement to check if a value has been entered before running further checks. 
+6.  
 
 
 ### Validator Testing

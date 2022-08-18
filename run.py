@@ -64,15 +64,19 @@ def enter_username():
     if username == 'exit':
         exit_game()
 
-    if any(char in string.punctuation for char in username):
-        print(' Special character used, please use letters only')
-        enter_username()
-    elif any(char.isdigit() for char in username):
-        print(' Number used, please use letters only')
+    if username == '':
+        print('Please enter a value.')
         enter_username()
     else:
-        os.system('clear')
-        board_size()
+        if any(char in string.punctuation for char in username):
+            print(' Special character used, please use letters only')
+            enter_username()
+        elif any(char.isdigit() for char in username):
+            print(' Number used, please use letters only')
+            enter_username()
+        else:
+            os.system('clear')
+            board_size()
 
 
 # Select board size
