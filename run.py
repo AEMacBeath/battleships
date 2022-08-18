@@ -25,7 +25,7 @@ def open_instructions():
         enter_username()
     else:
         print(
-            ' >>> Please select if you would like to view the game instructions.')
+            ' >>> Please select if you would like to view the instructions.')
         open_instructions()
 
 
@@ -65,14 +65,14 @@ def enter_username():
         exit_game()
 
     if username == '':
-        print('Please enter a value.')
+        print(' No username entered.')
         enter_username()
     else:
         if any(char in string.punctuation for char in username):
-            print(' Special character used, please use letters only')
+            print(' Username contains a special character, please use letters only')
             enter_username()
         elif any(char.isdigit() for char in username):
-            print(' Number used, please use letters only')
+            print(' Username contains a number, please use letters only')
             enter_username()
         else:
             os.system('clear')
@@ -98,7 +98,7 @@ def board_size():
         - Grid size = 10x10
         - Hidden ships = 10
     """)
-    board = input(' >>> Enter s = small or l = large:\n')
+    board = input(' >>> Enter s for small or l for large:\n')
 
     if board == 'l':
         size = 10
