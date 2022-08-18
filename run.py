@@ -25,7 +25,7 @@ def open_instructions():
         enter_username()
     else:
         print(
-            ' >>> Please select if you would like to view the instructions.')
+            ' Please select if you would like to view the instructions.')
         open_instructions()
 
 
@@ -60,7 +60,7 @@ def enter_username():
     Any other characters will promt the user to try again.
     """
     global username
-    username = input(' >>> please enter a username:\n')
+    username = input(' >>> Enter a username:\n')
     if username == 'exit':
         exit_game()
 
@@ -247,7 +247,7 @@ def restart_game():
     restart_game function allows the user to 
     restart or exit the game.
     """
-    play_again = input(' >>> Do you want to play again (y/n)?:\n')
+    play_again = input(' >>> Do you want to play again? (y/n):\n')
 
     global area
 

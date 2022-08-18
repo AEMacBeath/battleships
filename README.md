@@ -57,6 +57,11 @@ As a player of this game I can
 - play the game.
 - restart the game.
 
+## Flow Diagram
+
+### Application flow diagram
+![flow_diagram](/readme_scsreenshots/flow_diagram.png)
+
 ## Features
 
 ### Welcome Screen
@@ -83,6 +88,9 @@ Number error
 Special character error
 
 ![username_special_error](/readme_scsreenshots/username_special_error.png)
+
+No value error
+![username_novalue_error](/readme_scsreenshots/username_novalue_error.png)
 
 ### Select Board Screen
 The select board screen contains information about each board size and an input for the user to select which one they would like to use. 
@@ -134,8 +142,87 @@ The goodbye screen which appears when the user selects;
     -   Fix: Created restart_game funcation to check the user input and provide feedback if the ipnut is invalid.
 5.  Enter username accepts empty values.
     -   Added if statement to check if a value has been entered before running further checks. 
-6.  
 
+#### Feature testing
+Run [heroku app](https://battleships-am.herokuapp.com/) to load welcome screen
+
+##### [Welcome Screen](#welcome-screen)
+-  Welcome ascii art loads
+-  _Open instructions? (y/n)_ visible and waiting for user input
+
+Error checking:
+Try entering the below invalid inputs
+-   Anything except y or n
+-   No value
+
+Enter y - opens Instructions Screen
+Enter n - _Enter a username?_ visible and waiting for user input
+
+##### [Instructions Screen](#instructions-screen)
+-   Game instructions load
+-   _Enter a username?_ visible and waiting for user input
+
+Error checking:
+Try entering the below invalid inputs
+-   Anything except y or n
+-   Special characters
+-   No value
+
+Enter a valid username - goes to Select Board Size Screen
+
+##### [Select Board Screen](#select-board-screen)
+-   Board options and information loads
+-   _Enter s for small or l for large_ visible and waiting for user input
+
+Error checking:
+Try entering the below invalid inputs
+-   Anything except s or l
+-   No value
+
+Enter s or l - goes to Game Play screen
+
+##### [Game Play](#game-play)
+-   Board loads as .'s (5 x 5 or 10 x 10 depending on board selection)
+-   _Enter x coordinate from..._ visible and waiting for user input
+
+Error checking:
+Try entering the below invalid inputs
+-   0 or number higher than
+    -   5 (5x5 board)
+    -   10  (10x10 board)
+-   Letters
+-   Special characters
+-   No value
+
+Enter a valid x coordinate
+-   _Enter y coordinate from..._ visible and waiting for user input
+
+Error checking:
+Try entering the below invalid inputs
+-   0 or number higher than
+    -   5 (5x5 board)
+    -   10  (10x10 board)
+-   Letters
+-   Special characters
+-   No value
+
+Play the game until all ships are found - goes to Game Complete Screen
+
+###### [Game Complete Screen](#game-complete-screen)
+-   Winner ascii loads
+-   _Do you want to play again? (y/n)_ visible and waiting for user input
+
+Error checking:
+Try entering the below invalid inputs
+-   Anything except y or n
+-   Special characters
+-   No value
+
+Enter y - goes back to Select Board Screen
+Enter n - goes to Goodbye Screen
+
+###### [Goodbye Screen](#goodbye-screen)
+-   Goodbye ascii loads
 
 ### Validator Testing
 
