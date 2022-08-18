@@ -25,7 +25,7 @@ def open_instructions():
         enter_username()
     else:
         print(
-            ' Please select if you would like to view the instructions.')
+            ' Please enter y or n to select if you would like to view the instructions.')
         open_instructions()
 
 
