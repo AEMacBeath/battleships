@@ -11,6 +11,7 @@ Try entering the below invalid inputs
 -   No value
 
 Error feedback
+
 ![input_errors_view_instructions](/readme_scsreenshots/input_errors_view_instructions.png)
 
 Enter y - opens Instructions Screen
@@ -28,6 +29,7 @@ Try entering the below invalid inputs
 -   No value
 
 Error feedback
+
 ![input_errors_username](/readme_scsreenshots/input_errors_username.png)
 
 Enter a valid username - goes to Select Board Size Screen
@@ -42,6 +44,7 @@ Try entering the below invalid inputs
 -   No value
 
 Error feedback
+
 ![input_errors_board_selection](/readme_scsreenshots/input_errors_board_selection.png)
 
 Enter s or l - goes to Game Play screen
@@ -60,6 +63,7 @@ Try entering the below invalid inputs
 -   No value
 
 Error feedback
+
 ![input_error_x_coord](/readme_scsreenshots/input_error_x_coord.png)
 
 Enter a valid x coordinate
@@ -75,6 +79,7 @@ Try entering the below invalid inputs
 -   No value
 
 Error feedback
+
 ![input_error_y_coord](/readme_scsreenshots/input_error_y_coord.png)
 
 Play the game until all ships are found - goes to Game Complete Screen
@@ -90,6 +95,7 @@ Try entering the below invalid inputs
 -   No value
 
 Error feedback
+
 ![input_error_play_again](/readme_scsreenshots/input_error_play_again.png)
 
 Enter y - goes back to Select Board Screen

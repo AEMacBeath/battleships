@@ -49,6 +49,7 @@ As a player of this game I can
 - exit the game
 
 ## Application Flow Diagram
+
 ![flow_diagram](/readme_scsreenshots/flow_diagram.png)
 
 ## Features
@@ -75,12 +76,15 @@ At the start of the game, the board is made up of .'s printed to the console.
 The user is then asked to enter x and y coordinates.
 
 #### 5x5 Board
+
 ![game_play_5x5](/readme_scsreenshots/game_play_5x5.png)
 
 #### 10x10 Board
+
 ![game_play_10x10](/readme_scsreenshots/game_play_10x10.png)
 
 #### Board with shots taken
+
 ![game_play_shots](/readme_scsreenshots/game_play_shots.png)
 
 #### Shot feedback
@@ -92,6 +96,7 @@ After each shot a HIT or MISS message is printed to the console with an updated 
 
 ### Game Complete Screen
 When the game is complete there is a WINNER message and option to play again. As shown below.
+
 ![game_complete](/readme_scsreenshots/game_complete.png)
 
 ### Goodbye screen
@@ -104,6 +109,7 @@ The goodbye screen which appears when the user selects;
 ## Testing
 
 ### Feature Testing
+
 See [feature_testing.md](/feature_testing.md)
 
 ### Validator Testing
