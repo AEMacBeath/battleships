@@ -11,6 +11,14 @@ Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
 ## Table of Contents
 
 1. [Game Instructions](#game-instructions)
+2. [User Stories](#user-stories)
+3. [Application Flow Diagram](#application-flow-diagram)
+4. [Features](#features)
+5. [Testing](#testing)
+6. [Deployment](#deployment)
+7. [Technologies Used](#technologies-used)
+8. [Credits](#credits)
+9. [Future Development](#future-development)
 
 ## Game Instructions
  1. Enter a user name to begin the game.
@@ -40,7 +48,7 @@ As a player of this game I can
 - restart the game.
 - exit the game
 
-## Application flow diagram
+## Application Flow Diagram
 ![flow_diagram](/readme_scsreenshots/flow_diagram.png)
 
 ## Features
@@ -93,103 +101,15 @@ The goodbye screen which appears when the user selects;
 
 ![goodbye_screen](/readme_scsreenshots/goodbye_screen.png)
 
-## Technologies used
-
-- Python3
-- GitHub
-- GitPod
-- Heroku
-- ASCII art
-- [Lucid](https://lucid.app/) to create flow chart
-
 ## Testing
 
-### Feature testing
-Run [heroku app](https://battleships-am.herokuapp.com/)
-
-#### [Welcome Screen](#welcome-screen)
--  Welcome ascii art loads
--  _Open instructions? (y/n)_ visible and waiting for user input
-
-Error checking:
-Try entering the below invalid inputs
--   Anything except y or n
--   No value
-
-Error feedback
-
-Enter y - opens Instructions Screen
-Enter n - _Enter a username?_ visible and waiting for user input
-
-#### [Instructions Screen](#instructions-screen)
--   Game instructions load
--   _Enter a username?_ visible and waiting for user input
-
-Error checking:
-Try entering the below invalid inputs
--   Anything except y or n
--   Special characters
--   No value
-
-Enter a valid username - goes to Select Board Size Screen
-
-#### [Select Board Screen](#select-board-screen)
--   Board options and information loads
--   _Enter s for small or l for large_ visible and waiting for user input
-
-Error checking:
-Try entering the below invalid inputs
--   Anything except s or l
--   No value
-
-Enter s or l - goes to Game Play screen
-
-#### [Game Play](#game-play)
--   Board loads as .'s (5 x 5 or 10 x 10 depending on board selection)
--   _Enter x coordinate from..._ visible and waiting for user input
-
-Error checking:
-Try entering the below invalid inputs
--   0 or number higher than
-    -   5 (5x5 board)
-    -   10  (10x10 board)
--   Letters
--   Special characters
--   No value
-
-Enter a valid x coordinate
--   _Enter y coordinate from..._ visible and waiting for user input
-
-Error checking:
-Try entering the below invalid inputs
--   0 or number higher than
-    -   5 (5x5 board)
-    -   10  (10x10 board)
--   Letters
--   Special characters
--   No value
-
-Play the game until all ships are found - goes to Game Complete Screen
-
-##### [Game Complete Screen](#game-complete-screen)
--   Winner ascii loads
--   _Do you want to play again? (y/n)_ visible and waiting for user input
-
-Error checking:
-Try entering the below invalid inputs
--   Anything except y or n
--   Special characters
--   No value
-
-Enter y - goes back to Select Board Screen
-Enter n - goes to Goodbye Screen
-
-##### [Goodbye Screen](#goodbye-screen)
--   Goodbye ascii loads
+### Feature Testing
+See [feature_testing.md](/feature_testing.md)
 
 ### Validator Testing
+Python - no errors found when passing through [PEP8 online](http://pep8online.com)
 
-- Python - no errors found whne passing through [PEP8 online](http://pep8online.com/checkresult)
+![pep8_results](/readme_scsreenshots/pep8_results.png)
 
 ### Bugs
 #### Fixed bugs
@@ -198,11 +118,12 @@ Enter n - goes to Goodbye Screen
 2.  GamePlay function accepts 0 as x and y coordinate when the instructions state to enter only between 1 and 5.
     -   Fix: Created, x_guess and y_guess, functions to check user input for errors. 
 3.  When users enter coordinates that have already been entered, there is no feedback provided.
-    -   Fix: Added attempts array to record the attempt values and an if statment to check if new enteries have already been entered.
+    -   Fix: Added attempts array to record the attempt values and an if statement to check if new entries have already been entered.
 4.  Play again? (y/n) accepts empty and invalid inputs.
-    -   Fix: Created restart_game funcation to check the user input and provide feedback if the ipnut is invalid.
+    -   Fix: Created restart_game function to check the user input and provide feedback if the input is invalid.
 5.  Enter username accepts empty values.
     -   Added if statement to check if a value has been entered before running further checks. 
+
 
 ## Deployment
 
@@ -215,6 +136,15 @@ This site was deployed to Heroku by following the below steps:
 - Link the app to the [GitHub Repository](https://github.com/AEMacBeath/battleships)
 - Enable automatic Deploys and click Deploy
 - Link to deployed website - [Battleships](https://battleships-am.herokuapp.com/)
+
+## Technologies used
+
+- Python3
+- GitHub
+- GitPod
+- Heroku
+- ASCII art
+- [Lucid](https://lucid.app/) to create flow chart
 
 ## Credits
 

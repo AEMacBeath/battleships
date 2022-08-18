@@ -25,7 +25,8 @@ def open_instructions():
         enter_username()
     else:
         print(
-            ' Please enter y or n to select if you would like to view the instructions.')
+            ' Please enter y or n to select if you would'
+            ' like to view the instructions.')
         open_instructions()
 
 
@@ -69,7 +70,8 @@ def enter_username():
         enter_username()
     else:
         if any(char in string.punctuation for char in username):
-            print(' Username contains a special character, please use letters only')
+            print(' Username contains a special character,'
+                  'please use letters only')
             enter_username()
         elif any(char.isdigit() for char in username):
             print(' Username contains a number, please use letters only')
@@ -162,7 +164,7 @@ def x_guess(ship, attempt_row):
     except:
         print(f' {attempt_row} is not a valid entry. Please try again.')
         return x_guess(ship, attempt_row)
-    
+
     if int(attempt_row) > len(ship) or int(attempt_row) < 1:
         print(' Coordinate outside of board. Please try again.')
         return x_guess(ship, attempt_row)
@@ -219,8 +221,8 @@ def game_play(ship, attempt_row, attempt_column):
 
         if attempt in attempts:
             os.system('clear')
-            print(' You have already guessed those coordinates. Please try again.')
-        
+            print(' You have already guessed those coordinates.'
+                  'Please try again.')
         elif int(str(coord_x) + str(coord_y)) in ship:
             # os.system('clear')
             area[int(coord_x) - 1][int(coord_y) - 1] = "X"
@@ -244,7 +246,7 @@ def game_play(ship, attempt_row, attempt_column):
 # Restart game / play again
 def restart_game():
     """
-    restart_game function allows the user to 
+    restart_game function allows the user to
     restart or exit the game.
     """
     play_again = input(' >>> Do you want to play again? (y/n):\n')
@@ -258,7 +260,8 @@ def restart_game():
         os.system('clear')
         board_size()
     else:
-        print(' Please enter y or n to select if you would like to play again.')
+        print(' Please enter y or n to select if you'
+              'would like to play again.')
         restart_game()
 
 
